@@ -117,3 +117,56 @@ Welcome to the XV Quiz for CSL 3030 - Operating Systems!
 
 ## Answers
 Please write your answers here
+Q1) b. A Unix-like operating system
+Q2) c. BSD
+Q3) a. FAT32
+Q4) b. As interrupts
+Q5) a. 128
+Q6) c. Sh
+Q7) a. Round-robin scheduling
+Q8) a. Paging
+Q9) d. Both b and c
+Q10)b. No
+Q11)c. MIT
+
+## Theoretical Answer
+Q12) In the XV6 operating system, processes can be in several states as they execute and interact with the system. The main process states in XV6 are:
+	a)Unused
+	b)Ready
+	c)Running
+	d)Sleeping
+	e)Zombie
+	
+Q13)It follows the hierarichal structure to store the files. It includes:
+	Directories: Directory to the file stored in the system
+	InNodes: Stores the meta data about the files
+	
+Q14) System calls are the programs that are used to access kernel functions ex: fork()
+     Library functions: These are function calls which execute in the user mode and does not require any kind of special permission such as admin permission.ex: printf() in C.
+     
+Q15) In xv6, the memory paging system works as follows:
+    a)Page Tables:The physical memory is also divided into pages of the same size. Page tables are used to map virtual addresses to physical addresses. Xv6 employs a two-level page table structure.
+   b)Page Faults: The operating system, in response to this page fault, needs to bring the required page into physical memory.
+   c)Page Replacement: If there is not enough free space in physical memory, the operating system needs to choose a page to swap out to make room for the required page. This involves selecting a victim page, writing it back to disk if it has been       
+   modified, and then bringing the desired page into memory.
+   d)Lazy Loading: Xv6 uses lazy loading, meaning that it doesn't load an entire process into memory at once. Instead, it loads pages into memory on-demand. 
+   
+   This is more memory-efficient, especially for large programs that may not use all of their code and data at once.
+   
+Q16) Three shell commands are:
+'ls': Gets all the files and directories present in a particular directory.
+'cd': Chnages the root directory of the current shell
+'mkdir': Creates a new directory.
+
+Q17)In XV6, process synchronization is vital for managing shared resources. Locks control access to critical sections, ensuring exclusive execution, while condition variables facilitate communication between processes, promoting coordination. These mechanisms prevent race conditions and enhance data integrity in a multi-process environment, improving the operating system's reliability.
+
+Q18)In XV6, interrupts are vital for handling external events. They trigger interrupt service routines, temporarily halting processes to efficiently manage time-sensitive tasks or external events. This responsiveness is crucial for multitasking, ensuring the operating system can swiftly address concurrent processes and maintain system efficiency.
+
+Q19)Virtual memory in XV6 employs demand paging and page replacement algorithms, offering an illusion of a larger address space. This approach optimizes physical memory use, supports larger programs, ensures process isolation, and simplifies memory management. The benefits include flexibility, efficient resource utilization, and enhanced overall system performance.
+
+Q20)BIOS/UEFI Initialization: BIOS initializes hardware and performs a Power-On Self-Test (POST).
+Bootloader Execution: The BIOS/UEFI locates and executes a bootloader (commonly GRUB). The bootloader loads the XV6 kernel from the filesystem into memory.
+Kernel Initialization: The XV6 kernel initializes essential data structures, sets up memory, and configures devices.
+User Space Initiation: The kernel launches the user-space init process, the first user-level process, responsible for system initialization.
+Idle Loop: The system enters an idle loop, waiting for events like interrupts or system calls.
+User Interaction: Once initialized, the user can interact with the XV6 operating system, executing commands and running processes.
